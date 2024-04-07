@@ -1,0 +1,60 @@
+<?php include('server.php') ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="login.php" ><?php
+            include('error.php'); ?>
+                <div class="input-box ">
+                    <input type="text" required>
+                    <label>Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box ">
+                    <input type="password" required>
+                    <label>Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button id="myButton" type="Submit" class="btn">Login</button>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                
+                <div class="logreg-link">
+                    <p>Don't have an account? <a href="register.php" class="register-link">Register</a></p>
+                    <p>Go back? <a href="index.html">Home</a></p>
+                </div>
+            </form>
+        </div>        
+        <div class="info-text lg">
+            <h2>Welcome Back!</h2>
+        </div>
+    </div>
+
+    <script>
+        // Get reference to the login button
+        var button = document.getElementById('myButton');
+
+        // Add an event listener to the button
+        button.addEventListener('click', function() {
+            // Redirect user to the specified link
+            window.location.href = "https://www.figma.com/proto/KMzstGM38NuiUZ8XC28j8b/Health-Vault?type=design&node-id=628-9762&t=fyh2oMsY9rlwyhqI-0&scaling=min-zoom&page-id=0%3A1";
+        });
+    </script>
+</body>
+</html>
