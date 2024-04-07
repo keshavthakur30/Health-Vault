@@ -1,186 +1,223 @@
 <!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+ <style>
+    /* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(8, 7, 15);
+}
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #191313;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgb(240, 237, 237);
+}
+.container header {
+  font-size: 1.5rem;
+  color: rgb(84,99,99);
+color: linear-gradient(0deg, rgba(84,99,99,1) 0%, rgba(45,34,82,1) 98%);
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #c4bcbc;
+}
+sup{
+    color: rgba(156, 27, 27, 12.664);
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #635d5d;
+  margin-top: 8px;
+  border: 1px solid #696363;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: #969090; 
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(39, 18, 145);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #e7e1e185;
+}
 
-<head>
-    <meta charset="utf-8">
-    <title>Register - Health Vault</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: grey;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: 1px solid grey ;
+ 
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(7,46,46);
+background: linear-gradient(90deg, rgba(7,46,46,1) 35%, rgba(83,168,185,1) 100%);
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-    <link href="css/style.css" rel="stylesheet">
-</head>
-
-<body>
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0 text-primary"><i class="far fa-hospital me-3"></i>Health Vault</h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="" class="nav-item nav-link">Overview</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="appointment.html" class="dropdown-item">Appointment</a>
-                        <a href="https://drive.google.com/drive/folders/1BPwwi4bHELsekrmz2lFYl9kHzihR_IMF?usp=drive_link" class="dropdown-item">Drive</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="login.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login</a>
+}
+.register{
+color: white;
+}
+.form button:hover {
+    background: rgb(7,46,46);
+background: radial-gradient(circle, rgba(7,46,46,1) 35%, rgba(83,168,185,1) 100%);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+ </style>
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="#" class="form">
+        <div class="input-box">
+          <label>Full Name <sup>*</sup></label>
+          <input type="text" placeholder="Enter full name" required />
         </div>
-    </nav>
-    <!-- Navbar End -->
-<!-- Registration Section Start -->
-<section class="container py-5">
-  <div class="row justify-content-center">
-      <div class="col-md-6">
-          <div class="card">
-              <div class="card-header">Register</div>
 
-              <div class="card-body">
-                  <form method="POST" action="{{ route('register') }}">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div class="input-box">
+          <label>Email Address <sup>*</sup></label>
+          <input type="text" placeholder="Enter email address" required />
+        </div>
 
-                      <div class="mb-3">
-                          <label for="name" class="form-label">Full Name</label>
-                          <input id="name" type="text" class="form-control" name="name" required autofocus placeholder="Enter your full name">
-                      </div>
-
-                      <div class="mb-3">
-                          <label for="email" class="form-label">Email Address</label>
-                          <input id="email" type="email" class="form-control" name="email" required autocomplete="email" placeholder="Enter your email address">
-                      </div>
-
-                      <div class="mb-3">
-                          <label for="password" class="form-label">Password</label>
-                          <input id="password" type="password" class="form-control" name="password" required autocomplete="new-password" placeholder="Enter a password">
-                      </div>
-
-                      <div class="mb-3">
-                          <label for="password-confirm" class="form-label">Confirm Password</label>
-                          <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm your password">
-                      </div>
-
-                      <button type="submit" class="btn btn-primary">Register</button>
-
-                      <div class="mt-3">
-                          <span>Already have an account? <a href="login.html">Login here</a></span>
-                      </div>
-                  </form>
-              </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number <sup>*</sup></label>
+            <input type="number" placeholder="Enter phone number" required />
           </div>
-      </div>
-  </div>
-</section>
-<!-- Registration Section End -->
-
-   
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-      <div class="container py-5">
-          <div class="row g-5">
-              <div class="col-lg-3 col-md-6">
-                  <h5 class="text-light mb-4">Address</h5>
-                  <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> Pune, Maharashtra </p>
-                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 88888 88888</p>
-                  <p class="mb-2"><i class="fa fa-envelope me-3"></i>healthvault673@gmail.com</p>
-                  <div class="d-flex pt-2">
-                      <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                              class="fab fa-twitter"></i></a>
-                      <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                              class="fab fa-facebook-f"></i></a>
-                      <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                              class="fab fa-youtube"></i></a>
-                      <a class="btn btn-outline-light btn-social rounded-circle" href=""><i
-                              class="fab fa-linkedin-in"></i></a>
-                  </div>
-              </div>
-              <div class="col-lg-3 col-md-6">
-                  <h5 class="text-light mb-4">Services</h5>
-                  <a class="btn btn-link" href="">Individual Profile</a>
-                  <a class="btn btn-link" href="">Appointment</a>
-                  <a class="btn btn-link" href="">Patient Overview</a>
-                  <a class="btn btn-link" href="">Health Tracking</a>
-                  <a class="btn btn-link" href="">Medicinal Data</a>
-                  <a class="btn btn-link" href="">Document Management</a>
-
-              </div>
-              <div class="col-lg-3 col-md-6">
-                  <h5 class="text-light mb-4">Quick Links</h5>
-                  <a class="btn btn-link" href="">About Us</a>
-                  <a class="btn btn-link" href="">Contact Us</a>
-                  <a class="btn btn-link" href="">Our Services</a>
-                  <a class="btn btn-link" href="">Terms & Condition</a>
-                  <a class="btn btn-link" href="">Support</a>
-              </div>
+          <div class="input-box">
+            <label>Birth Date<sup>*</sup></label>
+            <input type="date" placeholder="Enter birth date" required />
           </div>
-      </div>
-      <div class="container">
-          <div class="copyright">
-              <div class="row">
-                  <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                      &copy; Health Vault</a>, All Right Reserved.
-                  </div>
-                  <div class="col-md-6 text-center text-md-end">
-                      Designed By Health Vault
-                  </div>
-              </div>
+          <div class="input-box">
+            <label>Blood Group<sup>*</sup></label>
+            <input type="text" placeholder="Enter blood group" required />
           </div>
-      </div>
-  </div>
-  <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
+        </div>
+        <div class="gender-box">
+          <h3>Gender <sup>*</sup></h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" checked />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label class="c" for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address <sup>*</sup></label>
+          <input type="text" placeholder="Enter street address" required />
+          <input type="text" placeholder="Enter street address line 2" required />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Country</option>
+                <option>India</option>
+                <option>Japan</option>
+                <option>US</option>
+                <option>Nepal</option>
+              </select>
+            </div>
+           
+            <input type="text" placeholder="Enter your city" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Enter your region" required />
+            <input type="number" placeholder="Enter postal code" required />
+          </div>
+        </div>
+       
+       
+       <button class="register"><a href="https://www.figma.com/file/C6PL3fHDJf7kPF5dXfZSiX/him.restaurant?node-id=0%3A1&mode=dev" class="register=link" >Submit</a></button>
+       
+    <button>Already have an account? <a href="login.html" >Log in</a></button>
+      </form>
+    </section>
+  </body>
 </html>
